@@ -3,25 +3,16 @@ import { getProductReducer } from './reducers/productReducers';
 import { registerRatingReducer } from './reducers/ratingReducers';
 
 
-// const currentUser = localStorage.getItem("currentUser") ? JSON.parse(localStorage.getItem('currentUser')) : null;
-// const allchats = localStorage.getItem("allchats") ? JSON.parse(localStorage.getItem('allchats')) : null;
-
 
 const rootReducer = combineReducers({
     getProductReducer: getProductReducer,
     registerRatingReducer: registerRatingReducer
-    // registerUserReducer: registerUserReducer,
-    // updatePasswordReducer: updatePasswordReducer,
-    // chatCreateReducer: chatCreateReducer,
-    // getAllChatReducer: getAllChatReducer
+
 });
 
 
 const initialState = {
-    // loginUserReducer: {
-    //     currentUser: currentUser,
 
-    // },
 
 
 };
