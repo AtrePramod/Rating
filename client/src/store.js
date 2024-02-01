@@ -1,7 +1,6 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-// import { loginUserReducer, registerUserReducer, updatePasswordReducer } from './reducers/userReducer';
-import { thunk } from 'redux-thunk';
-// import { chatCreateReducer, getAllChatReducer } from './reducers/chatReducer';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'; import { thunk } from 'redux-thunk';
+import { getProductReducer } from './reducers/productReducers';
+import { registerRatingReducer } from './reducers/ratingReducers';
 
 
 // const currentUser = localStorage.getItem("currentUser") ? JSON.parse(localStorage.getItem('currentUser')) : null;
@@ -9,7 +8,8 @@ import { thunk } from 'redux-thunk';
 
 
 const rootReducer = combineReducers({
-    // loginUserReducer: loginUserReducer,
+    getProductReducer: getProductReducer,
+    registerRatingReducer: registerRatingReducer
     // registerUserReducer: registerUserReducer,
     // updatePasswordReducer: updatePasswordReducer,
     // chatCreateReducer: chatCreateReducer,
@@ -22,6 +22,7 @@ const initialState = {
     //     currentUser: currentUser,
 
     // },
+
 
 };
 

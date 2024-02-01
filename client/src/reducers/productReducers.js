@@ -1,16 +1,17 @@
-export const registerRatingReducer = (state = {}, action) => {
+export const getProductReducer = (state = {}, action) => {
 
     switch (action.type) {
-        case "REGISTER_REQUEST":
+        case "GETPRODUCT_REQUEST":
             return {
-                loading: true
+                loading: true,
             }
-        case "REGISTER_SUCCESS":
+        case "GETPRODUCT_SUCCESS":
             return {
                 loading: false,
-                success: true
+                success: true,
+                products: action.payload
             }
-        case "REGISTER_FAIL":
+        case "GETPRODUCT_FAIL":
             return {
                 loading: false,
                 success: false,

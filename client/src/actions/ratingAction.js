@@ -2,26 +2,23 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 
-export const registerUser = (user) => async dispatch => {
+export const registerRating = (sendData) => async (dispatch) => {
 
-    dispatch({ type: 'USER_REGISTER_REQUEST' })
+    dispatch({ type: 'REGISTER_REQUEST' })
     try {
-        const res = await axios.post("/api/v1/user/register", user)
-
+        const res = await axios.post("/api/v1/rating/new", sendData)
         if (res.data.success) {
             Swal.fire({
                 position: "top",
                 icon: "success",
-                title: "User created successful!",
+                title: res.data.message,
                 showConfirmButton: false,
                 timer: 1500
             });
         }
-
-        dispatch({ type: 'USER_REGISTER_SUCCESS' })
+        dispatch({ type: 'REGISTER_SUCCESS', payload: res.data })
     } catch (error) {
-        dispatch({ type: 'USER_REGISTER_FAIL', payload: error })
-
+        dispatch({ type: 'REGISTER_FAIL', payload: error })
         if (!error.response.data.success) {
             Swal.fire({
                 position: "top",
