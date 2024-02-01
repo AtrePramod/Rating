@@ -3,11 +3,11 @@ const Product = require('../Model/product');
 // Controller function to create a new product
 exports.createProduct = async (req, res) => {
     try {
-        const { name, description, price, category } = req.body;
+        const { name, url, description, price, category } = req.body;
 
         // Create a new product instance
         const product = new Product({
-            name,
+            name, url,
             description,
             price,
             category
