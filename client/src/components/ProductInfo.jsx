@@ -35,7 +35,6 @@ const ProductInfo = () => {
             score: rating,
             comment: review
         }
-        console.log(sendData)
         dispatch(registerRating(sendData))
         setRating('');
         setReview('');
