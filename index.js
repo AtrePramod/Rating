@@ -6,7 +6,8 @@ const connectDB = require('./config/db')
 dotenv.config()
 
 
-// const adsRoutes = require('./routes/adsRouters')
+const productRoutes = require('./routes/productRoutes')
+const ratingRoutes = require('./routes/ratingRoutes')
 
 connectDB();
 
@@ -15,7 +16,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// app.use('/api/v1/user', userRoutes) 
+app.use('/api/v1/product', productRoutes)
+app.use('/api/v1/rating', ratingRoutes)
 
 //port 
 const PORT = process.env.PORT || 8080
