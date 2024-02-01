@@ -37,6 +37,7 @@ exports.getAllProducts = async (req, res) => {
 
         res.status(200).send({
             success: true,
+            count: products.length,
             products
         });
     } catch (error) {
