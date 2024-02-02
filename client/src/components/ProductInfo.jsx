@@ -55,7 +55,7 @@ const ProductInfo = () => {
     return (
         <div className="container m-5 p-2">
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 border">
                     <div className="product-card">
                         <img src={item.url} style={{ width: "200px", height: "300px" }} alt="" />
                         <h2>{item.name}</h2>
@@ -69,16 +69,16 @@ const ProductInfo = () => {
                             <span className={`fa fa-star ${avg >= 5 ? 'checked' : ''}`}></span>
                         </p>
                         <h3>Revies: </h3>
-                        {allreviews && allreviews.length > 0 && allreviews.map((item, i = 0) => <>
-                            <p>{i + 1}: {item.comment}</p>
-                        </>)}
+                        {allreviews && allreviews.length > 0 && allreviews.map((item, i = 0) =>
+                            <p key={i}>{i + 1}: {item.comment}</p>
+                        )}
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 border ">
                     <div>
                         <h2>Add Review</h2>
-                        <form onSubmit={handleSubmit}>
-                            <div className="form-group">
+                        <form onSubmit={handleSubmit} className='d-flex justify-content-center flex-column'>
+                            <div className="form-group m-3">
                                 <label>Rating:</label>
                                 <select className="form-control" value={rating} onChange={handleRatingChange}>
                                     <option value="">Select Rating</option>
@@ -89,11 +89,11 @@ const ProductInfo = () => {
                                     <option value="5">5 Stars</option>
                                 </select>
                             </div>
-                            <div className="form-group">
+                            <div className="form-group m-3">
                                 <label>Review:</label>
                                 <textarea className="form-control" value={review} onChange={handleReviewChange}></textarea>
                             </div>
-                            <button type="submit" className="btn btn-primary m-2">Submit Review</button>
+                            <button type="submit" className="btn btn-primary mt-2">Submit Review</button>
                         </form>
                     </div>
                 </div>

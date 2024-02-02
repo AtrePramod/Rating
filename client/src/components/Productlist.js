@@ -25,12 +25,13 @@ const Productlist = ({ product }) => {
     // console.log(Ratings)
     return (
         <>
-            <div className='col-md-3 m-5' onClick={() => handleOnclick(_id)}>
-                <div className="card " style={{ width: "18rem" }}>
-                    <img src={url} className="card-img-top" alt={name} />
+            <div className='col-md-2 m-5' onClick={() => handleOnclick(_id)}>
+                <div className="card " style={{ width: "21rem" }}>
+                    <img src={url} className="card-img-top" style={{ height: "250px" }} alt={name} />
                     <div className="card-body">
-                        <h5 className="card-title">{name}</h5>
-                        <p className="card-text">{description}</p>
+                        <h5 className="card-title">{name.length > 10 ? name.substring(0, name.indexOf(' ', 10)) : name}</h5>
+                        <p className="card-text">{description.split(' ').slice(0, 8).join(' ')} {description.split(' ').length > 8 ? '...' : ''}</p>
+
                         <p>Price: ${price}</p>
                         <p>Category: {category}</p>
 
