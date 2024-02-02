@@ -1,12 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'; import { thunk } from 'redux-thunk';
 import { getProductReducer } from './reducers/productReducers';
-import { registerRatingReducer } from './reducers/ratingReducers';
+import { getAllRating, registerRatingReducer } from './reducers/ratingReducers';
 
 
 
 const rootReducer = combineReducers({
     getProductReducer: getProductReducer,
-    registerRatingReducer: registerRatingReducer
+    registerRatingReducer: registerRatingReducer,
+    getAllRating: getAllRating
 
 });
 
