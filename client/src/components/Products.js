@@ -7,11 +7,12 @@ import { getAllrating } from '../actions/ratingAction';
 const Products = () => {
     const dispatch = useDispatch();
     const { products } = useSelector(state => state.getProductReducer); // Corrected useSelector
+
     useEffect(() => {
         dispatch(getAllProduct());
         dispatch(getAllrating());
     }, [dispatch]);
-    // console.log(products)
+    // console.log(Ratings)
     return (
         <div className="container">
             <div className="row">

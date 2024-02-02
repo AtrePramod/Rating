@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 import { registerRating } from '../actions/ratingAction';
-
+import '../App.css'
 const ProductInfo = () => {
     const dispatch = useDispatch()
     const { id } = useParams();
     const [item, setItem] = useState({});
     const [rating, setRating] = useState('');
     const [review, setReview] = useState('');
-
+    const [allreviews, setAllreviews] = useState([]);
+    const [avg, setAvg] = useState(0)
+    const { Ratings } = useSelector(state => state.getAllRating);
+    const navigate = useNavigate()
     useEffect(() => {
         const product = JSON.parse(localStorage.getItem("products"));
         if (product && product.length > 0) {
@@ -18,7 +21,14 @@ const ProductInfo = () => {
                 setItem(foundItem);
             }
         }
-    }, [id]);
+        if (Ratings && Ratings.length > 0) {
+            const productRatings = Ratings.filter(item => item.productId === id);
+            setAllreviews(productRatings)
+            const totalScore = productRatings.reduce((sum, item) => sum + item.score, 0);
+            const average = totalScore / productRatings.length || 0;
+            setAvg(average);
+        }
+    }, [id, Ratings]);
 
     const handleRatingChange = (e) => {
         setRating(e.target.value);
@@ -38,7 +48,9 @@ const ProductInfo = () => {
         dispatch(registerRating(sendData))
         setRating('');
         setReview('');
+        navigate('/')
     };
+
 
     return (
         <div className="container m-5 p-2">
@@ -49,6 +61,17 @@ const ProductInfo = () => {
                         <h2>{item.name}</h2>
                         <p>{item.description}</p>
                         <p>Price: {item.price}</p>
+                        <p> Rating :
+                            <span className={`fa fa-star ${avg >= 1 ? 'checked' : ''}`}></span>
+                            <span className={`fa fa-star ${avg >= 2 ? 'checked' : ''}`}></span>
+                            <span className={`fa fa-star ${avg >= 3 ? 'checked' : ''}`}></span>
+                            <span className={`fa fa-star ${avg >= 4 ? 'checked' : ''}`}></span>
+                            <span className={`fa fa-star ${avg >= 5 ? 'checked' : ''}`}></span>
+                        </p>
+                        <h3>Revies: </h3>
+                        {allreviews && allreviews.length > 0 && allreviews.map((item, i = 0) => <>
+                            <p>{i + 1}: {item.comment}</p>
+                        </>)}
                     </div>
                 </div>
                 <div className="col-md-6">
@@ -75,7 +98,7 @@ const ProductInfo = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
