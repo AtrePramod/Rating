@@ -63,4 +63,4 @@ This project is a product rating application developed using the MERN stack (Mon
 
 ## Contact
 
-For any questions or issues, please contact [your-pramodatre05@gmail.com](mailto:your-pramodatre05@gmail.com).
+For any questions or issues, please contact [pramodatre05@gmail.com](mailto:your-pramodatre05@gmail.com).
