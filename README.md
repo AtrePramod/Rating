@@ -21,6 +21,11 @@ This project is a product rating application developed using the MERN stack (Mon
 - **Node.js**: The JavaScript runtime environment for running the backend server.
 - **Mongoose**: For MongoDB object modeling.
 
+## Live Demo
+
+You can check out the live application at [Product Rating App](https://product-rating.netlify.app/).
+
+
 ## Installation and Setup
 
 ### Prerequisites
