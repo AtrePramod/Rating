@@ -6,7 +6,7 @@ export const registerRating = (sendData) => async (dispatch) => {
 
     dispatch({ type: 'REGISTER_REQUEST' })
     try {
-        const res = await axios.post("/api/v1/rating/new", sendData)
+        const res = await axios.post("https://host-backend-rating-of-product.onrender.com/api/v1/rating/new", sendData)
         if (res.data.success) {
             Swal.fire({
                 position: "top",
@@ -35,7 +35,7 @@ export const registerRating = (sendData) => async (dispatch) => {
 export const getAllrating = () => async (dispatch) => {
     try {
         dispatch({ type: "GETALLRATING_REQUEST" })
-        const response = await axios.get("/api/v1/rating/all")
+        const response = await axios.get("https://host-backend-rating-of-product.onrender.com/api/v1/rating/all")
         localStorage.setItem('rating', JSON.stringify(response.data.Ratings))
 
         dispatch({ type: 'GETALLRATING_SUCCESS', payload: response.data.Ratings })

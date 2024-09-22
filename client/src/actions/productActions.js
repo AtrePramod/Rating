@@ -5,7 +5,7 @@ export const getAllProduct = () => async (dispatch) => {
 
     dispatch({ type: 'GETPRODUCT_REQUEST' })
     try {
-        const response = await axios.get("/api/v1/product/all")
+        const response = await axios.get("https://host-backend-rating-of-product.onrender.com/api/v1/product/all")
         localStorage.setItem('products', JSON.stringify(response.data.products))
 
         dispatch({ type: 'GETPRODUCT_SUCCESS', payload: response.data.products })
