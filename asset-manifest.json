@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/rating-app/static/css/main.30fe3526.css",
-    "main.js": "/rating-app/static/js/main.9c4ca25e.js",
-    "static/js/787.d5fa4d18.chunk.js": "/rating-app/static/js/787.d5fa4d18.chunk.js",
-    "index.html": "/rating-app/index.html",
-    "main.30fe3526.css.map": "/rating-app/static/css/main.30fe3526.css.map",
-    "main.9c4ca25e.js.map": "/rating-app/static/js/main.9c4ca25e.js.map",
-    "787.d5fa4d18.chunk.js.map": "/rating-app/static/js/787.d5fa4d18.chunk.js.map"
+    "main.css": "/Rating-System-of-product/static/css/main.30fe3526.css",
+    "main.js": "/Rating-System-of-product/static/js/main.c0379500.js",
+    "static/js/787.d5fa4d18.chunk.js": "/Rating-System-of-product/static/js/787.d5fa4d18.chunk.js",
+    "index.html": "/Rating-System-of-product/index.html",
+    "main.30fe3526.css.map": "/Rating-System-of-product/static/css/main.30fe3526.css.map",
+    "main.c0379500.js.map": "/Rating-System-of-product/static/js/main.c0379500.js.map",
+    "787.d5fa4d18.chunk.js.map": "/Rating-System-of-product/static/js/787.d5fa4d18.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.30fe3526.css",
-    "static/js/main.9c4ca25e.js"
+    "static/js/main.c0379500.js"
   ]
 }
